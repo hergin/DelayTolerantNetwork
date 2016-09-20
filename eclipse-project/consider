@@ -1,0 +1,20 @@
+__OK__
+kapatilan client'in src veya destinationinda oldugu mesaj varsa onun dropped kismini 2 yap ve messageslistte goster, message details kismindada
+zaten bufferlandıysa, bir dahaa bufferlamasın
+epidemic için mesajı birden fazla kere alma kontrolü.
+her client için send button'un altına bi log area (içinde store ettiği mesajlar, aldığı mesajlar falan)
+epidemic için farklı bir ayar (UDP Threadteki alert box kesin kalkmalı. yukardakini implement et)
+generate random network linki ekle (add link sayfasına)
+grafiği küçültme yollarına bak
+admin client'i sildiği zaman ona uyarı
+yeni client attach ettiği zaman herkese bi uyarı
+mesaj routing
+mesajların loglanması
+loglardan bir mesajı takip etme
+renkli grafik çizme
+client silindikten sonra bile çizilsin ama farklı bi renkte (gri mesela)
+	bu sayede mesaj detayları sayfası saçmalamaz.
+	silinen client'ın linkleride noktalı çizgi ile çizilsin
+history için listede zaten varsa eklenmesin (mesaj uzuyo gidiyooo)
+detach edildiği zamanda, notifyClient çağrısı yap
+mesaja TTL kontrolü ekle, yoksa bilgisayar patlıycak

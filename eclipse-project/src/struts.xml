@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+    "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+    "http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+    <constant name="struts.enable.DynamicMethodInvocation" value="false" />
+    <constant name="struts.devMode" value="false" />
+
+    <package name="default" namespace="/" extends="struts-default">
+
+        <default-action-ref name="index" />
+
+        <global-results>
+            <result name="error">/error.jsp</result>
+        </global-results>
+
+        <global-exception-mappings>
+            <exception-mapping exception="java.lang.Exception" result="error"/>
+        </global-exception-mappings>
+
+        <action name="index" class="ws.huso.dtn.action.MainAction" method="getMyPage">
+        	<result name="success">jsp/index.jsp</result>
+        </action>
+        
+        <action name="getAllLinks" class="ws.huso.dtn.action.MainAction" method="getLinks">
+        	<result name="success">jsp/linkList.jsp</result>
+        </action>
+        
+        <action name="getClients" class="ws.huso.dtn.action.MainAction" method="getClients">
+        	<result name="success">jsp/clientList.jsp</result>
+        </action>
+        
+        <action name="getMessages" class="ws.huso.dtn.action.MainAction" method="getMessages">
+        	<result name="success">jsp/messageList.jsp</result>
+        </action>
+        
+        <action name="getMessageDetails" class="ws.huso.dtn.action.MainAction" method="getMessageDetails">
+        	<result name="success">jsp/messageDetails.jsp</result>
+        </action>
+        
+        <action name="deleteClient" class="ws.huso.dtn.action.MainAction" method="deleteClient">
+        	<result name="success" type="redirect">getClients.action</result>
+        </action>
+        
+        <action name="toAddLink" class="ws.huso.dtn.action.MainAction" method="toAddLink">
+        	<result name="success">jsp/addLink.jsp</result>
+        </action>
+        
+        <action name="getConfigPage" class="ws.huso.dtn.action.MainAction" method="getConfigPage">
+        	<result name="success">jsp/config.jsp</result>
+        </action>
+        
+        <action name="generateRandomNetwork" class="ws.huso.dtn.action.MainAction" method="generateRandomNetwork">
+        	<result name="success" type="redirect">getAllLinks.action</result>
+        </action>
+        
+        <action name="modifyProtocol" class="ws.huso.dtn.action.MainAction" method="modifyProtocol">
+        	<result name="success" type="redirect">getConfigPage.action</result>
+        </action>
+        
+        <action name="activateLink" class="ws.huso.dtn.action.MainAction" method="activateLink">
+        	<result name="success" type="redirect">getAllLinks.action</result>
+        	<result name="error">jsp/message.jsp</result>
+        </action>
+        
+        <action name="deactivateLink" class="ws.huso.dtn.action.MainAction" method="deactivateLink">
+        	<result name="success" type="redirect">getAllLinks.action</result>
+        </action>
+        
+        <action name="deleteLink" class="ws.huso.dtn.action.MainAction" method="deleteLink">
+        	<result name="success" type="redirect">getAllLinks.action</result>
+        	<result name="error">jsp/message.jsp</result>
+        </action>
+        
+        <action name="addLink" class="ws.huso.dtn.action.MainAction" method="addLink">
+        	<result name="success" type="redirect">getAllLinks.action</result>
+        	<result name="error">jsp/message.jsp</result>
+        </action>
+        
+    </package>
+
+    <!-- Add packages here -->
+
+</struts>
